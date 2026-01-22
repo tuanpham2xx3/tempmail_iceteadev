@@ -1,0 +1,58 @@
+module.exports = {
+  apps: [
+    {
+      name: 'tempmail-backend',
+      cwd: './backend',
+      script: 'npm',
+      args: 'start',
+      env: {
+        NODE_ENV: 'production',
+        PORT: 3001,
+        HOST: '127.0.0.1', // Bind to localhost only (VPS sandbox compatible)
+      },
+      error_file: './logs/backend-error.log',
+      out_file: './logs/backend-out.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+      merge_logs: true,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '500M',
+      instances: 1,
+      exec_mode: 'fork',
+    },
+    {
+      name: 'tempmail-frontend',
+      cwd: './frontend',
+      script: 'npm',
+      args: 'start',
+      env: {
+        NODE_ENV: 'production',
+        PORT: 3000,
+        HOSTNAME: '127.0.0.1', // Bind to localhost only (VPS sandbox compatible)
+        NEXT_PUBLIC_API_URL: 'https://apimail.iceteadev.site/api',
+      },
+      error_file: './logs/frontend-error.log',
+      out_file: './logs/frontend-out.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+      merge_logs: true,
+      autorestart: true,
+      watch: false,
+      max_memory_restart: '500M',
+      instances: 1,
+      exec_mode: 'fork',
+    },
+    {
+      name: 'cloudflare-tunnel',
+      script: 'cloudflared',
+      args: 'tunnel --config /root/.cloudflared/config.yml run',
+      error_file: './logs/tunnel-error.log',
+      out_file: './logs/tunnel-out.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+      merge_logs: true,
+      autorestart: true,
+      watch: false,
+      instances: 1,
+      exec_mode: 'fork',
+    },
+  ],
+};
