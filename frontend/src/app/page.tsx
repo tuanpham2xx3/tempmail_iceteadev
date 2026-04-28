@@ -9,6 +9,8 @@ import styles from './page.module.css';
 
 const AUTO_REFRESH_INTERVAL = 15; // seconds
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
   const [address, setAddress] = useState('');
   const [emails, setEmails] = useState<EmailPreview[]>([]);
