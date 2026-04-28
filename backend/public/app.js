@@ -166,7 +166,7 @@ function renderEmailList() {
                             <span class="text-xs text-gray-500 whitespace-nowrap">${formatRelativeTime(email.date)}</span>
                         </div>
                         <h4 class="text-sm font-medium text-gray-800 truncate mb-1">${email.subject || '(Không có tiêu đề)'}</h4>
-                        <p class="text-xs text-gray-500 line-clamp-1">${email.textPreview || '...'}</p>
+                        <p class="text-xs text-gray-500 line-clamp-1">${email.preview || '...'}</p>
                     </div>
                 </div>
             </button>
@@ -203,7 +203,7 @@ async function openEmail(id) {
         elViewerDate.textContent = new Date(email.date).toLocaleString('vi-VN');
 
         // Render body using iframe for isolation
-        const htmlContent = email.html || `<div style="white-space: pre-wrap; font-family: sans-serif; padding: 1rem;">${email.text || 'Email không có nội dung.'}</div>`;
+        const htmlContent = email.htmlBody || `<div style="white-space: pre-wrap; font-family: sans-serif; padding: 1rem;">${email.textBody || 'Email không có nội dung.'}</div>`;
         
         // Clean old iframe to prevent memory leak
         elViewerContentWrapper.innerHTML = '';
