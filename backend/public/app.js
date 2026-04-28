@@ -203,7 +203,9 @@ async function openEmail(id) {
         elViewerDate.textContent = new Date(email.date).toLocaleString('vi-VN');
 
         // Render body using iframe for isolation
-        const htmlContent = email.htmlBody || `<div style="white-space: pre-wrap; font-family: sans-serif; padding: 1rem;">${email.textBody || 'Email không có nội dung.'}</div>`;
+        const responsiveCSS = `<style>body{margin:0;padding:1rem;font-family:sans-serif;overflow-x:hidden;word-wrap:break-word;}img{max-width:100%!important;height:auto!important;}table{max-width:100%!important;width:100%!important;}td{max-width:100%!important;}*{box-sizing:border-box;}</style>`;
+        const rawContent = email.htmlBody || `<div style="white-space: pre-wrap; font-family: sans-serif; padding: 1rem;">${email.textBody || 'Email không có nội dung.'}</div>`;
+        const htmlContent = responsiveCSS + rawContent;
         
         // Clean old iframe to prevent memory leak
         elViewerContentWrapper.innerHTML = '';
