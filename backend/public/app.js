@@ -150,7 +150,8 @@ function renderEmailList() {
     }
 
     elEmailList.innerHTML = emails.map(email => {
-        const fromName = email.from.name || email.from.address.split('@')[0];
+        const fromString = email.from || 'Unknown';
+        const fromName = fromString.split('@')[0];
         const avatarLetter = fromName.charAt(0).toUpperCase();
         
         return `
@@ -193,11 +194,12 @@ async function openEmail(id) {
         const email = data.email;
 
         // Render header
-        const fromName = email.from.name || email.from.address.split('@')[0];
+        const fromString = email.from || 'Unknown';
+        const fromName = fromString.split('@')[0];
         elViewerAvatar.textContent = fromName.charAt(0).toUpperCase();
         elViewerSubject.textContent = email.subject || '(Không có tiêu đề)';
         elViewerFromName.textContent = fromName;
-        elViewerFromEmail.textContent = `<${email.from.address}>`;
+        elViewerFromEmail.textContent = `<${fromString}>`;
         elViewerDate.textContent = new Date(email.date).toLocaleString('vi-VN');
 
         // Render body using iframe for isolation
