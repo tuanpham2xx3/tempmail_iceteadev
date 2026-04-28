@@ -1,0 +1,3 @@
+module.exports=[27572,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"vi",suppressHydrationWarning:!0,children:(0,b.jsx)("body",{suppressHydrationWarning:!0,children:a})})},"metadata",0,{title:"TempMail - Email Tạm Thời | khoahoctietkiem.site",description:"Dịch vụ email tạm thời miễn phí. Nhận email xác minh nhanh chóng với @khoahoctietkiem.site. Bảo vệ quyền riêng tư của bạn.",keywords:["tempmail","email tạm thời","temporary email","disposable email","khoahoctietkiem"],openGraph:{title:"TempMail - Email Tạm Thời",description:"Dịch vụ email tạm thời miễn phí với @khoahoctietkiem.site",type:"website"}}])},50645,a=>{a.n(a.i(27572))}];
+
+//# sourceMappingURL=src_app_layout_tsx_0fhx__n._.js.map

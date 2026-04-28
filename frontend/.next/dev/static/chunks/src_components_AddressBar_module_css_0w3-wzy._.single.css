@@ -1,0 +1,214 @@
+/* [project]/src/components/AddressBar.module.css [app-client] (css) */
+.AddressBar-module__gr9kda__container {
+  animation: AddressBar-module__gr9kda__fadeIn .4s var(--ease-out);
+}
+
+.AddressBar-module__gr9kda__inputGroup {
+  gap: var(--space-md);
+  align-items: stretch;
+  display: flex;
+}
+
+.AddressBar-module__gr9kda__inputWrapper {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  flex: 1;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.AddressBar-module__gr9kda__inputWrapper:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px #6366f11a, var(--shadow-sm);
+}
+
+.AddressBar-module__gr9kda__inputIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: var(--space-md);
+  color: var(--text-tertiary);
+  transition: color var(--transition-base);
+  flex-shrink: 0;
+}
+
+.AddressBar-module__gr9kda__inputWrapper:focus-within .AddressBar-module__gr9kda__inputIcon {
+  color: var(--accent-primary);
+}
+
+.AddressBar-module__gr9kda__input {
+  padding: var(--space-md);
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  background: none;
+  border: none;
+  flex: 1;
+  min-width: 0;
+  font-weight: 400;
+}
+
+.AddressBar-module__gr9kda__input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.AddressBar-module__gr9kda__domain {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-accent);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  font-family: var(--font-mono);
+  border-left: 1px solid var(--border-glass);
+  white-space: nowrap;
+  background: #6366f114;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.AddressBar-module__gr9kda__actions {
+  gap: var(--space-sm);
+  flex-shrink: 0;
+  display: flex;
+}
+
+.AddressBar-module__gr9kda__btnPrimary, .AddressBar-module__gr9kda__btnSecondary {
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  transition: all var(--transition-base);
+  font-weight: 600;
+  display: flex;
+}
+
+.AddressBar-module__gr9kda__btnPrimary {
+  background: var(--accent-gradient);
+  color: #fff;
+  background-size: 200% 200%;
+}
+
+.AddressBar-module__gr9kda__btnPrimary:hover:not(:disabled) {
+  background: var(--accent-gradient-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.AddressBar-module__gr9kda__btnPrimary:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.AddressBar-module__gr9kda__btnSecondary {
+  background: var(--bg-glass);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+}
+
+.AddressBar-module__gr9kda__btnSecondary:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--border-glass-hover);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.AddressBar-module__gr9kda__activeAddress {
+  margin-top: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  animation: AddressBar-module__gr9kda__fadeIn .3s var(--ease-out);
+  background: #6366f10d;
+  border: 1px solid #6366f126;
+}
+
+.AddressBar-module__gr9kda__activeLabel {
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+  display: flex;
+}
+
+.AddressBar-module__gr9kda__activeDot {
+  background: var(--success);
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  animation: 2s infinite AddressBar-module__gr9kda__pulse;
+  box-shadow: 0 0 8px #34d39980;
+}
+
+.AddressBar-module__gr9kda__addressDisplay {
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  display: flex;
+}
+
+.AddressBar-module__gr9kda__addressText {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  color: var(--text-accent);
+  letter-spacing: .02em;
+  font-weight: 500;
+}
+
+.AddressBar-module__gr9kda__btnCopy {
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  padding: 6px 12px;
+  font-weight: 600;
+  display: flex;
+}
+
+.AddressBar-module__gr9kda__btnCopy:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--border-glass-hover);
+  color: var(--text-primary);
+}
+
+.AddressBar-module__gr9kda__btnCopied {
+  background: var(--success-bg) !important;
+  color: var(--success) !important;
+  border-color: #34d3994d !important;
+}
+
+@media (max-width: 768px) {
+  .AddressBar-module__gr9kda__inputGroup {
+    flex-direction: column;
+  }
+
+  .AddressBar-module__gr9kda__actions {
+    justify-content: stretch;
+  }
+
+  .AddressBar-module__gr9kda__btnPrimary, .AddressBar-module__gr9kda__btnSecondary {
+    padding: var(--space-md);
+    flex: 1;
+    justify-content: center;
+  }
+
+  .AddressBar-module__gr9kda__addressText {
+    font-size: var(--text-base);
+    word-break: break-all;
+  }
+}
+
+/*# sourceMappingURL=src_components_AddressBar_module_css_0w3-wzy._.single.css.map*/
