@@ -52,8 +52,8 @@ echo "📝 Tunnel ID: $TUNNEL_ID"
 # Create DNS routes
 echo ""
 echo "🌐 Creating DNS routes..."
-cloudflared tunnel route dns tempmail mail.iceteadev.site
-cloudflared tunnel route dns tempmail apimail.iceteadev.site
+cloudflared tunnel route dns tempmail mail.khoahoctietkiem.site
+cloudflared tunnel route dns tempmail apimail.khoahoctietkiem.site
 
 # Create config directory
 mkdir -p /root/.cloudflared
@@ -66,12 +66,12 @@ tunnel: $TUNNEL_ID
 credentials-file: /root/.cloudflared/$TUNNEL_ID.json
 
 ingress:
-  # Frontend - mail.iceteadev.site -> localhost:3000
-  - hostname: mail.iceteadev.site
+  # Frontend - mail.khoahoctietkiem.site -> localhost:3000
+  - hostname: mail.khoahoctietkiem.site
     service: http://localhost:3000
   
-  # Backend API - apimail.iceteadev.site -> localhost:3001
-  - hostname: apimail.iceteadev.site
+  # Backend API - apimail.khoahoctietkiem.site -> localhost:3001
+  - hostname: apimail.khoahoctietkiem.site
     service: http://localhost:3001
   
   # Catch-all rule

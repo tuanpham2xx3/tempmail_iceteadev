@@ -91,28 +91,28 @@ echo ""
 echo "🌐 Setting up DNS routes..."
 echo "Checking if routes exist..."
 
-# Check and create route for mail.iceteadev.site
-if ! cloudflared tunnel route dns list | grep -q "mail.iceteadev.site"; then
-    echo "Creating DNS route for mail.iceteadev.site..."
+# Check and create route for mail.khoahoctietkiem.site
+if ! cloudflared tunnel route dns list | grep -q "mail.khoahoctietkiem.site"; then
+    echo "Creating DNS route for mail.khoahoctietkiem.site..."
     if [ -n "$TUNNEL_NAME" ]; then
-        cloudflared tunnel route dns "$TUNNEL_NAME" mail.iceteadev.site || echo "⚠️  Failed to create route (may already exist)"
+        cloudflared tunnel route dns "$TUNNEL_NAME" mail.khoahoctietkiem.site || echo "⚠️  Failed to create route (may already exist)"
     else
-        cloudflared tunnel route dns "$TUNNEL_ID" mail.iceteadev.site || echo "⚠️  Failed to create route (may already exist)"
+        cloudflared tunnel route dns "$TUNNEL_ID" mail.khoahoctietkiem.site || echo "⚠️  Failed to create route (may already exist)"
     fi
 else
-    echo "✅ Route for mail.iceteadev.site already exists"
+    echo "✅ Route for mail.khoahoctietkiem.site already exists"
 fi
 
-# Check and create route for apimail.iceteadev.site
-if ! cloudflared tunnel route dns list | grep -q "apimail.iceteadev.site"; then
-    echo "Creating DNS route for apimail.iceteadev.site..."
+# Check and create route for apimail.khoahoctietkiem.site
+if ! cloudflared tunnel route dns list | grep -q "apimail.khoahoctietkiem.site"; then
+    echo "Creating DNS route for apimail.khoahoctietkiem.site..."
     if [ -n "$TUNNEL_NAME" ]; then
-        cloudflared tunnel route dns "$TUNNEL_NAME" apimail.iceteadev.site || echo "⚠️  Failed to create route (may already exist)"
+        cloudflared tunnel route dns "$TUNNEL_NAME" apimail.khoahoctietkiem.site || echo "⚠️  Failed to create route (may already exist)"
     else
-        cloudflared tunnel route dns "$TUNNEL_ID" apimail.iceteadev.site || echo "⚠️  Failed to create route (may already exist)"
+        cloudflared tunnel route dns "$TUNNEL_ID" apimail.khoahoctietkiem.site || echo "⚠️  Failed to create route (may already exist)"
     fi
 else
-    echo "✅ Route for apimail.iceteadev.site already exists"
+    echo "✅ Route for apimail.khoahoctietkiem.site already exists"
 fi
 
 # Create config directory
@@ -126,12 +126,12 @@ tunnel: $TUNNEL_ID
 credentials-file: $CREDENTIALS_FILE
 
 ingress:
-  # Frontend - mail.iceteadev.site -> localhost:3000
-  - hostname: mail.iceteadev.site
+  # Frontend - mail.khoahoctietkiem.site -> localhost:3000
+  - hostname: mail.khoahoctietkiem.site
     service: http://localhost:3000
   
-  # Backend API - apimail.iceteadev.site -> localhost:3001
-  - hostname: apimail.iceteadev.site
+  # Backend API - apimail.khoahoctietkiem.site -> localhost:3001
+  - hostname: apimail.khoahoctietkiem.site
     service: http://localhost:3001
   
   # Catch-all rule

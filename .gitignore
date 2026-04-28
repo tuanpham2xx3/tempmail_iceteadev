@@ -21,7 +21,6 @@ frontend/out/
 
 # Cloudflare
 .cloudflared/
-*.json
 
 # OS
 .DS_Store

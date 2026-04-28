@@ -29,7 +29,7 @@ module.exports = {
         NODE_ENV: 'production',
         PORT: 3000,
         HOSTNAME: '127.0.0.1', // Bind to localhost only (VPS sandbox compatible)
-        NEXT_PUBLIC_API_URL: 'https://apimail.iceteadev.site/api',
+        NEXT_PUBLIC_API_URL: 'https://apimail.khoahoctietkiem.site/api',
       },
       error_file: './logs/frontend-error.log',
       out_file: './logs/frontend-out.log',

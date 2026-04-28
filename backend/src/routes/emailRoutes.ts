@@ -25,7 +25,7 @@ router.get('/emails', async (req: Request, res: Response) => {
         if (!address || typeof address !== 'string') {
             return res.status(400).json({
                 error: 'Missing or invalid email address parameter',
-                message: 'Please provide a valid email address with ?address=xxx@iceteadev.site',
+                message: 'Please provide a valid email address with ?address=xxx@khoahoctietkiem.site',
             });
         }
 
