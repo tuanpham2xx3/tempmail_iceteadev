@@ -18,6 +18,17 @@ app.use((req, _res, next) => {
 // Routes
 app.use('/api', emailRoutes);
 
+// Static frontend
+app.use(express.static('public'));
+
+// Fallback all non-API routes to index.html (SPA routing)
+app.get('*', (req, res, next) => {
+    if (req.url.startsWith('/api')) {
+        return next();
+    }
+    res.sendFile('index.html', { root: 'public' });
+});
+
 // Health check
 app.get('/health', (_req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
